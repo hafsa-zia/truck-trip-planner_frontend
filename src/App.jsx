@@ -6,7 +6,7 @@ import RouteMap from "./components/RouteMap";
 import TripSummary from "./components/TripSummary";
 import StopsTimeline from "./components/StopsTimeline";
 import FMCSALog from "./components/FMCSALog";
-import Footer from "./components/Footer";
+import Footer from "./components/footer";
 
 export default function App() {
 
