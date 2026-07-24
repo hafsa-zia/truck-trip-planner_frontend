@@ -1,5 +1,5 @@
 import axios from "axios"
 
 export default axios.create({
-    baseURL:" "https://hafsaz.pythonanywhere.com/api""
+    baseURL:"https://hafsaz.pythonanywhere.com/api"
 })
