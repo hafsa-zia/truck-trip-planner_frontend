@@ -33,7 +33,7 @@ export default function TripForm({
             
             setError(
             error.response?.data?.error ||
-            "Unable to generate the trip. Please verify all locations and ensure they are spelled correctly..");
+            "Unable to generate the trip. Please verify all locations and ensure they are correct..");
 
         } finally {
 
@@ -117,200 +117,208 @@ export default function TripForm({
 }
 
             <form
-                onSubmit={handleSubmit}
-                className="space-y-5"
-            >
+    onSubmit={handleSubmit}
+    className="space-y-3"
+>
 
-                <div>
+    <div>
 
-                    <label className="text-slate-700 font-medium block mb-2">
-                        Current Location
-                    </label>
+        <label className="text-slate-700 text-sm font-medium block mb-1">
+            Current Location
+        </label>
 
-                    <input
-                        placeholder="e.g. Dallas, TX"
-                        className="
-                            w-full
-                            p-4
-                            rounded-xl
-                            bg-slate-50
-                            border
-                            border-slate-200
-                            text-slate-800
-                            placeholder:text-slate-400
-                            focus:outline-none
-                            focus:ring-4
-                            focus:ring-blue-100
-                            focus:border-blue-500
-                            transition
-                        "
-                        onChange={(e) =>
-                            setForm({
-                                ...form,
-                                current_location: e.target.value
-                            })
-                        }
-                    />
+        <input
+            placeholder="e.g. Dallas, TX"
+            className="
+                w-full
+                px-3
+                py-2.5
+                rounded-lg
+                bg-slate-50
+                border
+                border-slate-200
+                text-slate-800
+                placeholder:text-slate-400
+                focus:outline-none
+                focus:ring-2
+                focus:ring-amber-100
+                focus:border-amber-500
+                transition
+            "
+            onChange={(e) =>
+                setForm({
+                    ...form,
+                    current_location: e.target.value
+                })
+            }
+        />
 
-                </div>
-
-
-                <div>
-
-                    <label className="text-slate-700 font-medium block mb-2">
-                        Pickup Location
-                    </label>
-
-                    <input
-                        placeholder="e.g. Houston, TX"
-                        className="
-                            w-full
-                            p-4
-                            rounded-xl
-                            bg-slate-50
-                            border
-                            border-slate-200
-                            text-slate-800
-                            placeholder:text-slate-400
-                            focus:outline-none
-                            focus:ring-4
-                            focus:ring-blue-100
-                            focus:border-blue-500
-                            transition
-                        "
-                        onChange={(e) =>
-                            setForm({
-                                ...form,
-                                pickup_location: e.target.value
-                            })
-                        }
-                    />
-
-                </div>
+    </div>
 
 
-                <div>
+    <div>
 
-                    <label className="text-slate-700 font-medium block mb-2">
-                        Dropoff Location
-                    </label>
+        <label className="text-slate-700 text-sm font-medium block mb-1">
+            Pickup Location
+        </label>
 
-                    <input
-                        placeholder="e.g. Chicago, IL"
-                        className="
-                            w-full
-                            p-4
-                            rounded-xl
-                            bg-slate-50
-                            border
-                            border-slate-200
-                            text-slate-800
-                            placeholder:text-slate-400
-                            focus:outline-none
-                            focus:ring-4
-                            focus:ring-blue-100
-                            focus:border-blue-500
-                            transition
-                        "
-                        onChange={(e) =>
-                            setForm({
-                                ...form,
-                                dropoff_location: e.target.value
-                            })
-                        }
-                    />
+        <input
+            placeholder="e.g. Houston, TX"
+            className="
+                w-full
+                px-3
+                py-2.5
+                rounded-lg
+                bg-slate-50
+                border
+                border-slate-200
+                text-slate-800
+                placeholder:text-slate-400
+                focus:outline-none
+                focus:ring-2
+                focus:ring-amber-100
+                focus:border-amber-500
+                transition
+            "
+            onChange={(e) =>
+                setForm({
+                    ...form,
+                    pickup_location: e.target.value
+                })
+            }
+        />
 
-                </div>
-
-
-                <div>
-
-                    <label className="text-slate-700 font-medium block mb-2">
-                        Current Cycle Used (Hours)
-                    </label>
-
-                    <input
-                        type="number"
-                        placeholder="e.g. 20"
-                        className="
-                            w-full
-                            p-4
-                            rounded-xl
-                            bg-slate-50
-                            border
-                            border-slate-200
-                            text-slate-800
-                            placeholder:text-slate-400
-                            focus:outline-none
-                            focus:ring-4
-                            focus:ring-blue-100
-                            focus:border-blue-500
-                            transition
-                        "
-                        onChange={(e) =>
-                            setForm({
-                                ...form,
-                                current_cycle_used: e.target.value
-                            })
-                        }
-                    />
-
-                </div>
+    </div>
 
 
-                {loading && (
+    <div>
 
-                    <div className="text-center mb-6">
+        <label className="text-slate-700 text-sm font-medium block mb-1">
+            Dropoff Location
+        </label>
 
-                        <div
-                            className="
-                                w-12
-                                h-12
-                                border-4
-                                border-blue-500
-                                border-t-transparent
-                                rounded-full
-                                animate-spin
-                                mx-auto
-                            "
-                        />
+        <input
+            placeholder="e.g. Chicago, IL"
+            className="
+                w-full
+                px-3
+                py-2.5
+                rounded-lg
+                bg-slate-50
+                border
+                border-slate-200
+                text-slate-800
+                placeholder:text-slate-400
+                focus:outline-none
+                focus:ring-2
+                focus:ring-amber-100
+                focus:border-amber-500
+                transition
+            "
+            onChange={(e) =>
+                setForm({
+                    ...form,
+                    dropoff_location: e.target.value
+                })
+            }
+        />
 
-                        <p className="mt-4 text-slate-600 font-medium">
-                            🚚 Generating route, calculating HOS,
-                            and preparing FMCSA logs...
-                        </p>
+    </div>
 
-                    </div>
 
-                )}
+    <div>
+
+        <label className="text-slate-700 text-sm font-medium block mb-1">
+            Current Cycle Used (Hours)
+        </label>
+
+        <input
+            type="number"
+            placeholder="e.g. 20"
+            className="
+                w-full
+                px-3
+                py-2.5
+                rounded-lg
+                bg-slate-50
+                border
+                border-slate-200
+                text-slate-800
+                placeholder:text-slate-400
+                focus:outline-none
+                focus:ring-2
+                focus:ring-amber-100
+                focus:border-amber-500
+                transition
+            "
+            onChange={(e) =>
+                setForm({
+                    ...form,
+                    current_cycle_used: e.target.value
+                })
+            }
+        />
+
+    </div>
+
+
+    {loading && (
+
+        <div className="text-center mb-3">
+
+            <div
+                className="
+                    w-10
+                    h-10
+                    border-4
+                    border-amber-500
+                    border-t-transparent
+                    rounded-full
+                    animate-spin
+                    mx-auto
+                "
+            />
+
+            <p className="mt-2 text-sm text-slate-600 font-medium">
+                🚚 Generating route, calculating HOS,
+                and preparing FMCSA logs...
+            </p>
+
+        </div>
+
+    )}
+
+
 
 
                 <button
-                    disabled={loading}
-                    className="
-                        w-full
-                        bg-gradient-to-r
-                        from-blue-600
-                        to-indigo-600
-                        hover:from-blue-700
-                        hover:to-indigo-700
-                        text-white
-                        px-8
-                        py-4
-                        rounded-2xl
-                        font-semibold
-                        shadow-lg
-                        transition-all
-                        disabled:opacity-50
-                        disabled:cursor-not-allowed
-                    "
-                >
-                    {
-                        loading
-                            ? "🚚 Generating Route & Logs..."
-                            : "🚚 Generate Route & Logs"
-                    }
-                </button>
+    disabled={loading}
+    className="
+        w-full
+        bg-gradient-to-r
+        from-amber-500
+        to-orange-500
+        hover:from-amber-600
+        hover:to-orange-600
+        text-white
+        px-6
+        py-3
+        rounded-xl
+        font-semibold
+        shadow-lg
+        transition-all
+        duration-300
+        hover:scale-[1.02]
+        disabled:opacity-50
+        disabled:cursor-not-allowed
+    "
+>
+    {
+        loading
+            ? "🚚 Generating Route & Logs..."
+            : "🚚 Generate Route & Logs"
+    }
+</button>
 
             </form>
 

@@ -142,30 +142,28 @@ export default function App() {
                     >
 
                         <button
+    onClick={() => window.print()}
+    className="
+        bg-gradient-to-r
+        from-amber-500
+        to-orange-500
+        hover:from-amber-600
+        hover:to-orange-600
+        hover:scale-105
+        transition-all
+        duration-300
+        text-white
+        font-semibold
+        px-6
+        py-3
+        rounded-2xl
+        shadow-lg
+    "
+>
 
-                            onClick={() => window.print()}
+     Print FMCSA Logs
 
-                            className="
-                                bg-gradient-to-r
-                                from-blue-600
-                                to-indigo-600
-                                hover:from-blue-700
-                                hover:to-indigo-700
-                                hover:scale-105
-                                transition-all
-                                duration-300
-                                text-white
-                                font-semibold
-                                px-8
-                                py-4
-                                rounded-2xl
-                                shadow-lg
-                            "
-                        >
-
-                            Print FMCSA Logs
-
-                        </button>
+</button>
 
                     </div>
 
