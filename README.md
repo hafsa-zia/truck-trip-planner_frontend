@@ -1,16 +1,104 @@
-# React + Vite
+# Truck Trip Planner - Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+The frontend of Truck Trip Planner is built using React, Vite, Tailwind CSS, and Leaflet. It provides an intuitive interface for planning truck routes, visualizing maps, and viewing FMCSA-compliant driver logs.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+* Truck route planning between multiple locations
+* Interactive route visualization using Leaflet maps
+* Distinct markers for current, pickup, and dropoff locations
+* FMCSA Hours of Service (HOS) daily logs
+* Graph-style FMCSA log visualization
+* Loading indicators during route generation
+* Responsive and modern UI
+* Error handling for invalid or misspelled locations
 
-## React Compiler
+## Technologies Used
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* React
+* Vite
+* Tailwind CSS
+* React Leaflet
+* Axios
 
-## Expanding the Oxlint configuration
+## Installation
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+1. Clone the repository:
+
+```bash
+git clone <repository-url>
+```
+
+2. Navigate to the frontend directory:
+
+```bash
+cd frontend
+```
+
+3. Install dependencies:
+
+```bash
+npm install
+```
+
+4. Start the development server:
+
+```bash
+npm run dev
+```
+
+The application will be available at:
+
+```text
+http://localhost:5173
+```
+
+## Project Structure
+
+```text
+src/
+├── components/
+│   ├── FMCSALog.jsx
+│   ├── RouteMap.jsx
+│   ├── StopsTable.jsx
+│   └── TripForm.jsx
+├── services/
+│   └── api.js
+├── App.jsx
+└── main.jsx
+```
+
+## Key Functionality
+
+### Route Generation
+
+Users can provide:
+
+* Current location
+* Pickup location
+* Dropoff location
+* Current cycle hours used
+
+The frontend communicates with the Django REST API to generate optimized routes and retrieve trip details.
+
+### FMCSA Driver Logs
+
+The application displays a 24-hour FMCSA log using a graph-style representation similar to traditional paper logs, making driver status transitions easier to understand.
+
+### Map Visualization
+
+Routes are displayed using OpenStreetMap with:
+
+* Current location marker
+* Pickup location marker
+* Dropoff location marker
+* Polyline representing the complete trip route
+
+## Future Improvements
+
+* Authentication and user accounts
+* Trip history management
+* Dark mode support
+* Real-time traffic integration
+
+
